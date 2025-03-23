@@ -1,5 +1,5 @@
 import feedparser
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup # type: ignore
 
 # Google News RSS feed for Booz Allen Hamilton
 rss_url = "https://news.google.com/rss/search?q=Booz+Allen+Hamilton"
