@@ -30,5 +30,10 @@ jobs:
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
         git add bah_news_feed.html
-        git commit -m "Auto-update BAH RSS feed"
-        git push
+        if git diff --cached --quiet; then
+          echo "🟢 No changes to commit."
+        else
+          git commit -m "Auto-update BAH RSS feed"
+          git push
+        fi
+
