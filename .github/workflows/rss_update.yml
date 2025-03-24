@@ -2,8 +2,8 @@ name: Auto Update RSS Feed
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # Runs every 6 hours — adjust as needed
-  workflow_dispatch:       # Allow manual trigger
+    - cron: '0 */6 * * *'  # Every 6 hours
+  workflow_dispatch:
 
 jobs:
   update-feed:
