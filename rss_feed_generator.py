@@ -2,7 +2,7 @@ import feedparser
 from bs4 import BeautifulSoup
 
 # Google News RSS feed for Booz Allen Hamilton
-rss_url = "https://news.google.com/rss/search?q=Booz+Allen+Hamilton"
+rss_url = "https://www.defense.gov/DesktopModules/ArticleCS/RSS.ashx?max=10&ContentType=1&Site=945"
 
 # Parse the feed
 feed = feedparser.parse(rss_url)
@@ -17,7 +17,7 @@ for entry in feed.entries[:10]:
     news_items.append((title, link, published, summary))
 
 # Create HTML content
-html_content = "<h2>Booz Allen Hamilton in the News</h2><ul>"
+html_content = "<h2>DoD in the News</h2><ul>"
 for title, link, published, summary in news_items:
     html_content += f"<li><a href='{link}' target='_blank'><strong>{title}</strong></a><br><em>{published}</em><br>{summary}</li><br>"
 html_content += "</ul>"

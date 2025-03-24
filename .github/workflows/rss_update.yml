@@ -23,7 +23,7 @@ jobs:
         pip install feedparser beautifulsoup4
 
     - name: Run RSS Feed Generator
-      run: python rss_feed_generator.py
+      run: python rss_feed_generator.py #this is where the rss query is kept. 
 
     - name: Commit and Push Changes
       run: |
