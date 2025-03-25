@@ -2,8 +2,7 @@ import feedparser
 from bs4 import BeautifulSoup
 
 # Google News RSS feed for Booz Allen Hamilton
-rss_url = "https://news.google.com/rss/search?q=""Booz+Allen+Hamilton""+AND+(Contracts+OR+Fraud+OR+Illegal)&hl=en-US&gl=US&ceid=US:en
-"
+rss_url = "https://news.google.com/rss/search?q=%22Booz+Allen+Hamilton%22+AND+(Contracts+OR+Fraud+OR+Illegal)&hl=en-US&gl=US&ceid=US:en"
 
 # Parse the feed
 feed = feedparser.parse(rss_url)
