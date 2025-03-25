@@ -27,7 +27,7 @@ jobs:
 
     - name: Commit and Push Changes
       env:
-        TOKEN: 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
+        TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -36,5 +36,5 @@ jobs:
           echo "🟢 No changes to commit."
         else
           git commit -m "Auto-update BAH RSS feed"
-          git push https://x-access-token:${TOKEN}@github.com/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.git HEAD:${{ github.ref }}
+          git push https://x-access-token:${TOKEN}@github.com/${{ github.repository }}.git
         fi
