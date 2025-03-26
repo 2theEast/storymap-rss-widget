@@ -2,14 +2,14 @@ import feedparser
 from bs4 import BeautifulSoup
 
 # Google News RSS feed for Booz Allen Hamilton
-rss_url = "https://news.google.com/rss/search?q=%22Booz+Allen+Hamilton%22+AND+(Contracts+OR+Fraud+OR+Illegal)&hl=en-US&gl=US&ceid=US:en"
+rss_url = "https://news.google.com/rss/search?q=procurement+fraud+OR+Fraud+OR+Contracts+when:7d&hl=en-US&gl=US&ceid=US:en"
 
 # Parse the feed
 feed = feedparser.parse(rss_url)
 
-# Extract top 10 stories
+# Extract top 25 stories
 news_items = []
-for entry in feed.entries[:10]:
+for entry in feed.entries[:25]:
     title = entry.title
     link = entry.link
     published = entry.published
@@ -17,7 +17,7 @@ for entry in feed.entries[:10]:
     news_items.append((title, link, published, summary))
 
 # Create HTML content
-html_content = "<h2>Booz Allen Hamilton in the News</h2><ul>"
+html_content = "<h2>Procurement Fraud or Contracts in the News</h2><ul>"
 for title, link, published, summary in news_items:
     html_content += f"<li><a href='{link}' target='_blank'><strong>{title}</strong></a><br><em>{published}</em><br>{summary}</li><br>"
 html_content += "</ul>"
