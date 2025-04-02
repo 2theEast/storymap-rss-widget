@@ -17,7 +17,7 @@ for entry in feed.entries[:25]:
     news_items.append((title, link, published, summary))
 
 # Create HTML content
-html_content = "<h2>Procurement Fraud or Contracts in the News</h2><ul>"
+html_content = "<h2>USAF Contracts in the News</h2><ul>"
 for title, link, published, summary in news_items:
     html_content += f"<li><a href='{link}' target='_blank'><strong>{title}</strong></a><br><em>{published}</em><br>{summary}</li><br>"
 html_content += "</ul>"
