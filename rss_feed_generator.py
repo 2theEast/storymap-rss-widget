@@ -9,7 +9,7 @@ feed = feedparser.parse(rss_url)
 
 # Extract top 25 stories
 news_items = []
-for entry in feed.entries[:25]:
+for entry in feed.entries[:100]:
     title = entry.title
     link = entry.link
     published = entry.published
